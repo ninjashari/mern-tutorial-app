@@ -8,13 +8,14 @@ import Message from '../components/Message'
 import { listProductDetails } from '../actions/productActions'
 
 const ProductScreen = () => {
-  const [qty, setQty] = useState(0)
+  const [qty, setQty] = useState(1)
 
   const navigate = useNavigate()
   const match = useParams()
   // Get the product details from the store
   const dispatch = useDispatch()
   const productDetails = useSelector((state) => state.productDetails)
+  console.log('productDetails :: ', productDetails)
   const { product, loading, error } = productDetails
 
   // Set the product id in the state
